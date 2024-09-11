@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monedas</title>
+</head>
+
+<body>
+  <!-- sección navegación -->
+  <nav>
+    <a href="">cambio de monedas</a>
+  </nav>
+
+  <!-- sección principal -->
+  <main>
+
+    <section>
+      <h1>Conversor de monedas </h1>
+      <article>
+        <h2>Pesos CLP</h2>
+        <input type="text" name="input_pesos" id="input_pesos" placeholder="ingresar usuario">
+        <p>Moneda a convertir</p>
+        <select id="moneda_inicial">
+          <option value=""> selecciona moneda</option>
+          <option value="dolar">Dólares Americanos</option>
+          <option value="euro">Euros</option>
+          <option value="uf">uf</option>
+        </select>
+        <button type="submit" onclick="api_general()">enviar</button>
+        <div id="resultados"></div>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      </article>
+    </section>
+    <div id="mostrando"></div>
+  </main>
+
+  <!-- pie de página  -->
+
+  <footer>
+    <p>Todos los rerechos reservados</p>
+  </footer>
+  <!-- conectar script de chartjs  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>

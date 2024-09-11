@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Clima</title>
+  <style>
+    #graficoClima {
+      width: 80%;
+      height: 400px;
+      margin: auto;
+    }
+
+    .btn-descargar {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-descargar:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div id="graficoContainer">
+    <canvas id="graficoClima"></canvas>
+    <button class="btn-descargar" onclick="descargarGrafico()">Descargar Gráfico</button>
+  </div>
+
+  <script>
+    async function crearGraficoClima(ciudades, temperaturas) {
+      const ctx = document.getElementById('graficoClima').getContext('2d');
+
+      const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+      gradient.addColorStop(0, 'rgba(54, 162, 235, 0.5)');
+      gradient.addColorStop(1, 'rgba(255, 206, 86, 0.5)');
+
+      new Chart(ctx, {
+        type: 'line', // Tipo de gráfico
+        data: {
+          labels: ciudades, // Etiquetas (nombres de las ciudades)
+          datasets: [{
+            label: 'Temperatura (°C)', // Etiqueta del dataset
+            data: temperaturas, // Datos (temperaturas)
+            backgroundColor: gradient, // Fondo del gráfico con gradiente
+            borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
+            borderWidth: 1,
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Color de los puntos
+            pointBorderColor: '#fff', // Color del borde de los puntos
+            pointRadius: 5, // Tamaño de los puntos
+            pointHoverRadius: 7 // Tamaño de los puntos al pasar el cursor
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false, // Permitir que el gráfico cambie de tamaño basado en el contenedor
+          plugins: {
+            title: {
+              display: true,
+              text: 'Temperaturas de Ciudades',
+              font: {
+                size: 20
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (tooltipItem) {
+                  return `Temperatura: ${tooltipItem.raw}°C`;
+                }
+              }
+            },
+            legend: {
+              display: true,
+              position: 'top',
+              labels: {
+                color: '#333',
+                font: {
+                  size: 14
+                }
+              }
+            },
+            accessibility: {
+              enabled: true,
+              description: 'Este gráfico muestra las temperaturas promedio en varias ciudades.'
+            }
+          },
+          animation: {
+            duration: 2000, // Duración de la animación en milisegundos
+            easing: 'easeInOutBounce' // Tipo de animación
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function (value) {
+                  return `${value}°C`; // Agregar °C a las etiquetas del eje Y
+                }
+              }
+            }
+          },
+          onClick: (e, elements) => {
+            if (elements.length) {
+              const datasetIndex = elements[0].datasetIndex;
+              const index = elements[0].index;
+              const ciudad = ciudades[index];
+              const temperatura = temperaturas[index];
+              alert(`Ciudad: ${ciudad}\nTemperatura: ${temperatura}°C`);
+            }
+          }
+        }
+      });
+    }
+
+    function descargarGrafico() {
+      const link = document.createElement('a');
+      link.href = document.getElementById('graficoClima').toDataURL('image/png');
+      link.download = 'grafico_clima.png';
+      link.click();
+    }
+
+    // Ejemplo de uso con datos ficticios
+    const ciudades = ['Ciudad A', 'Ciudad B', 'Ciudad C', 'Ciudad D', 'Ciudad E'];
+    const temperaturas = [25, 30, 27, 29, 24];
+
+    // Crear el gráfico con los datos de ejemplo
+    crearGraficoClima(ciudades, temperaturas);
+  </script>
+</body>
+
+</html>

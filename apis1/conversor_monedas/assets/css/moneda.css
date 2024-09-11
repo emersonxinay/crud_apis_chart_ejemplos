@@ -1,0 +1,69 @@
+#mostrar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+}
+
+#mostrar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#mostrar h4 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#mostrar select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#mostrar input[type="number"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#mostrar button {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mostrar button:hover {
+  background-color: #3e8e41;
+}
+
+#mostrar #resultados {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #666;
+}
+
+#clp {
+  font-weight: bold;
+  color: #333;
+}

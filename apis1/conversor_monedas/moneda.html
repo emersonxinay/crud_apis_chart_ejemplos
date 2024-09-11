@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipo de cambio con gráfica</title>
+  <link rel="stylesheet" href="assets/css/moneda.css">
+</head>
+
+<body>
+  <div id="mostrar">
+    <h1>Conversor de monedas en Chile </h1>
+    <h4>1 dolar es a <span id="clp"> </span> pesos chilenos </h4>
+    <select id="moneda_inicial">
+      <option value="clp"> peso chileno</option>
+      <option value="dolar">Dólares Americanos</option>
+      <option value="euro">Euros</option>
+      <option value="uf">uf</option>
+    </select>
+    <input type="number" id="input_pesos" placeholder="Ingrese la cantidad en pesos">
+    <select id="moneda_final">
+      <option value="clp"> peso chileno</option>
+      <option value="dolar">Dólares Americanos</option>
+      <option value="euro">Euros</option>
+      <option value="uf">uf</option>
+    </select>
+    <button id="convertir">Convertir</button>
+    <div id="resultados"></div>
+
+  </div>
+  <div id="chart_div">
+
+  </div>
+
+  <div class="datos">
+
+  </div>
+
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="assets/js/moneda.js"></script>
+
+</body>
+
+</html>
