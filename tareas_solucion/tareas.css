@@ -1,0 +1,63 @@
+#inputs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content:space-between;
+  padding: 2em;
+}
+.ingresar{
+  background-color: rgb(103, 103, 113);
+  width: 90%;
+  color: rgb(3, 64, 196);
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 2em;
+}
+.agregar{
+  background-color: green;
+  color: white;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#resultados{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2em;
+
+}
+#totales{
+  width: 100%;
+  
+  padding: 2em;
+  background-color: blue;
+  border-radius: 2em;
+}
+#tablas{
+  width: 60%;
+  background-color: greenyellow;
+  border-radius: 2em;
+  padding: 2em;
+}
+tbody tr{
+  border-bottom: solid 3px red;
+}
+td{
+  padding: 0em 3em;
+
+}
+label, .titulos{
+  padding: 0em 2em;
+}
+.tareasagregadas{
+  background-color: aqua;
+  padding: 1em 2em;
+  border-radius: 2em;
+}
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tareas</title>
+  <link rel="stylesheet" href="tareas.css">
+</head>
+
+<body>
+  <!-- seccion de navegacion -->
+  <header>
+    <nav>
+      <a href="#"><img src="" alt=""> Logo</a>
+      <ul>
+        <li>Inicio</li>
+        <li>Nosotros</li>
+        <li>Contacto</li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- seccion principal -->
+  <main>
+    <section>
+      <div class="tareasagregadas">
+        <div class="titulos">
+          <h1>Todo List</h1>
+
+        </div>
+        <label for="">Nueva tarea</label>
+        <div id="inputs">
+          <input type="text" id="ingresar" class="ingresar" placeholder="tarea">
+          <button id="agregarTarea" class="agregar">Agregar</button>
+        </div>
+        <!-- todo el resultado -->
+        <div id="resultados">
+          <div>
+            <div id="totales">
+              <h3>Total: <span id="total">0</span> </h3>
+              <h3>Realizadas: <span id="realizadas">0</span> </h3>
+              <h3>pendientes: <span id="pendientes">0</span> </h3>
+
+
+            </div>
+          </div>
+          <div id="tablas">
+            <!-- crear table con 4 columnas -->
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tarea</th>
+                  <th>Seleccionar</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody id="mostrar">
+                <!-- agregar tareas aqui -->
+                <tr>
+                  <td>1</td>
+                  <td>Tarea 1</td>
+                  <td><input type="checkbox" name="" id="seleccionar"></td>
+                  <td><button id="editar">Editar</button></td>
+                  <td><button id="borrar">Eliminar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- pie de pagina  -->
+
+
+  <script src="tareas.js"></script>
+</body>
+
+</html>

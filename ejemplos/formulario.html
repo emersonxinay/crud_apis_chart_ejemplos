@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalización de Prism.js</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      padding: 15px;
+      background-color: #06070a;
+      color: #f8f8f2;
+      font-family: 'Fira Code', monospace;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .token.comment,
+    .token.block-comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+      color: #e6179e;
+    }
+
+    .token.keyword {
+      color: #ff79c6;
+    }
+
+    .token.string {
+      color: #50fa7b;
+    }
+
+    .token.number {
+      color: #bd93f9;
+    }
+
+    .token.tag {
+      color: #ff5555;
+    }
+
+    .token.attr-name {
+      color: #03d51b;
+    }
+
+    .token.function {
+      color: #8be9fd;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff79c6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ff5582;
+    }
+
+    .language-html {
+      background-color: #060101;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Código HTML Personalizado:</h2>
+  <pre><code class="language-html">
+&lt;form action=&quot;https://fabform.io/f/xxxxx&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;firstName&quot;&gt;First Name&lt;/label&gt;
+  &lt;input name=&quot;firstName&quot; type=&quot;text&quot; required&gt;
+  &lt;label for=&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
+  &lt;input name=&quot;lastName&quot; type=&quot;text&quot; required&gt;
+  &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+  &lt;input name=&quot;email&quot; type=&quot;email&quot; required&gt;
+  &lt;label for=&quot;files&quot;&gt;Choose files:&lt;/label&gt;
+  &lt;input type=&quot;file&quot; name=&quot;files&quot; multiple required /&gt;
+  &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+  <button onclick="copyCode()">Copiar Código</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script>
+    function copyCode() {
+      const code = document.querySelector('code').innerText;
+      const tempTextarea = document.createElement("textarea");
+      tempTextarea.value = code;
+      document.body.appendChild(tempTextarea);
+      tempTextarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempTextarea);
+      alert("¡Código copiado al portapapeles!");
+    }
+  </script>
+
+</body>
+
+</html>

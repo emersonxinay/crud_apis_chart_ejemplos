@@ -1,0 +1,32 @@
+#imagen {
+  width: 15em;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Añade espacio entre los artículos */
+}
+
+.contenedor {
+  flex: 1 1 calc(25% - 20px); /* Ajusta el ancho de los artículos, menos el espacio del gap */
+  margin: 10px; /* Espacio adicional alrededor del contenedor */
+  box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
+}
+
+.contenedor article {
+  padding: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  background-color: #fff; /* Fondo blanco para los artículos */
+}
+
+.contenedor article:hover {
+  transform: scale(1.05); /* Escala ligera al pasar el ratón sobre el artículo */
+}
